@@ -1,0 +1,5 @@
+E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\StrayRabbit.MMS.Service.dll
+E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\StrayRabbit.MMS.Service.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.Service\obj\Debug\StrayRabbit.MMS.Service.csproj.CoreCompileInputs.cache
+E:\GitHub\MMS\StrayRabbit.MMS.Service\obj\Debug\StrayRabbit.MMS.Service.dll
+E:\GitHub\MMS\StrayRabbit.MMS.Service\obj\Debug\StrayRabbit.MMS.Service.pdb

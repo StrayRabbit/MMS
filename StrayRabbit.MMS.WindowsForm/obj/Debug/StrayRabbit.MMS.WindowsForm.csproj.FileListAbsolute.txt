@@ -1,0 +1,13 @@
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\StrayRabbit.MMS.WindowsForm.exe.config
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\StrayRabbit.MMS.WindowsForm.exe
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\StrayRabbit.MMS.WindowsForm.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\SqliteSugar.dll
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\StrayRabbit.MMS.Domain.dll
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\System.Data.SQLite.dll
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\StrayRabbit.MMS.Domain.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.csprojResolveAssemblyReference.cache
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.Properties.Resources.resources
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.csproj.GenerateResource.Cache
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.csproj.CoreCompileInputs.cache
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.exe
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.pdb
