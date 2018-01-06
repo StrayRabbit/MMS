@@ -1,5 +1,12 @@
 E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\StrayRabbit.MMS.Service.dll
 E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\StrayRabbit.MMS.Service.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\SqliteSugar.dll
+E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\StrayRabbit.MMS.Common.dll
+E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\StrayRabbit.MMS.Domain.dll
+E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\System.Data.SQLite.dll
+E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\StrayRabbit.MMS.Common.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.Service\bin\Debug\StrayRabbit.MMS.Domain.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.Service\obj\Debug\StrayRabbit.MMS.Service.csprojResolveAssemblyReference.cache
 E:\GitHub\MMS\StrayRabbit.MMS.Service\obj\Debug\StrayRabbit.MMS.Service.csproj.CoreCompileInputs.cache
 E:\GitHub\MMS\StrayRabbit.MMS.Service\obj\Debug\StrayRabbit.MMS.Service.dll
 E:\GitHub\MMS\StrayRabbit.MMS.Service\obj\Debug\StrayRabbit.MMS.Service.pdb

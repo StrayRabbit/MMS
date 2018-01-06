@@ -24,7 +24,7 @@ namespace StrayRabbit.MMS.Domain.Model
         /// <summary>
         /// 角色Id
         /// </summary>
-        public string RoleId { get; set; }
+        public int RoleId { get; set; }
         /// <summary>
         /// 是否可用 1可用 0不可用
         /// </summary>
