@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dto\Sys_User\UserInfoDto.cs" />
+    <Compile Include="Model\BasicDictionary.cs" />
     <Compile Include="Model\Sys_Module.cs" />
     <Compile Include="Model\Sys_Role.cs" />
     <Compile Include="Model\Sys_Role_Module_Mapping.cs" />
@@ -58,6 +58,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SugarDao.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Dto\Sys_User\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

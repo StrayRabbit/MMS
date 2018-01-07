@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -43,6 +44,7 @@
     <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="SqliteSugar">
       <HintPath>..\StrayRabbit.MMS.Domain\bin\Debug\SqliteSugar.dll</HintPath>
     </Reference>
@@ -67,6 +69,18 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\UserInfo.cs" />
+    <Compile Include="FormUI\BasicInfo\BasicDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\BasicInfo\BasicDetail.Designer.cs">
+      <DependentUpon>BasicDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUI\BasicInfo\BasicInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\BasicInfo\BasicInfo.Designer.cs">
+      <DependentUpon>BasicInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUI\IntoStorage\IntoStorageManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +103,12 @@
     </Compile>
     <EmbeddedResource Include="Common\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\BasicInfo\BasicDetail.resx">
+      <DependentUpon>BasicDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\BasicInfo\BasicInfo.resx">
+      <DependentUpon>BasicInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\IntoStorage\IntoStorageManage.resx">
       <DependentUpon>IntoStorageManage.cs</DependentUpon>

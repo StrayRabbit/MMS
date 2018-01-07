@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Encript\MD5Encrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToolsHelper\Pinyin.cs" />
+    <Compile Include="ToolsHelper\TreeListModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -105,3 +105,6 @@ E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\de\DevExpress.Office.v16.2.C
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\es\DevExpress.Office.v16.2.Core.resources.dll
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\ja\DevExpress.Office.v16.2.Core.resources.dll
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\ru\DevExpress.Office.v16.2.Core.resources.dll
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo.BasicInfo.resources
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\DevExpress.BonusSkins.v16.2.dll
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo.BasicDetail.resources
