@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using StrayRabbit.MMS.Domain.Model;
 using StrayRabbit.MMS.Service.IService;
 using StrayRabbit.MMS.Service.ServiceImp;
 
@@ -31,13 +32,7 @@ namespace StrayRabbit.MMS.WindowsForm
             }
             else
             {
-                userInfo = new UserInfo()
-                {
-                    UserId = user.Id,
-                    Account = user.Account,
-                    RoleId = user.RoleId,
-                    UserName = user.Name,
-                };
+                InitUserInfo(user);
 
                 var form = new Main();
                 form.ShowDialog();
@@ -63,6 +58,23 @@ namespace StrayRabbit.MMS.WindowsForm
                 btn_login_Click(sender, e);
             }
         }
+        #endregion
+
+        #region 自定义函数
+        #region 加载全局变量UserInfo
+        /// <summary>
+        /// 加载全局变量UserInfo
+        /// </summary>
+        /// <param name="user"></param>
+        private void InitUserInfo(Sys_User user)
+        {
+            if (user == null || user.Id <= 0) return;
+
+            UserInfo.UserId = user.Id;
+            UserInfo.RoleId = user.RoleId;
+            UserInfo.UserName = user.Name;
+        }
+        #endregion
         #endregion
     }
 }
