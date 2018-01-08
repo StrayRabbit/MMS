@@ -30,6 +30,21 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
         #region 加载数据
         private void BasicInfo_Load(object sender, EventArgs e)
         {
+            splitContainerControl1.Height = UserInfo.ChildHeight + 10;
+            splitContainerControl1.Width= UserInfo.ChildWidth;
+            tl_dict.Height = UserInfo.ChildHeight;
+            gd_list.Height = UserInfo.ChildHeight - 65;
+            lbl_Sum.Top = UserInfo.ChildHeight - 22;
+
+            btn_First.Top = UserInfo.ChildHeight - 26;
+            btn_Preview.Top = UserInfo.ChildHeight - 26;
+            cmbPageNum.Top = UserInfo.ChildHeight - 25;
+            btn_MoveNext.Top = UserInfo.ChildHeight - 26;
+            btn_Last.Top = UserInfo.ChildHeight - 26;
+
+            groupBox1.Width = UserInfo.ChildWidth - 250;
+            gd_list.Width= UserInfo.ChildWidth - 250;
+
             InitTree();
         }
         #endregion

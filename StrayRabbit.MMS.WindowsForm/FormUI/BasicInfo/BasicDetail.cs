@@ -25,6 +25,8 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
         public BasicDetail()
         {
             InitializeComponent();
+
+
         }
 
         #region 保存

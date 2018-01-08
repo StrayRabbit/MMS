@@ -24,5 +24,15 @@ namespace StrayRabbit.MMS.WindowsForm
         /// 模块Id
         /// </summary>
         public static IEnumerable<int> Modules { get; set; }
+
+        /// <summary>
+        /// 子窗体高度
+        /// </summary>
+        public static int ChildHeight { get; set; }
+
+        /// <summary>
+        /// 子窗体宽度
+        /// </summary>
+        public static int ChildWidth { get; set; }
     }
 }

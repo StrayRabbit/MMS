@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Remoting;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
 using StrayRabbit.MMS.Service.IService;
@@ -55,7 +55,7 @@ namespace StrayRabbit.MMS.WindowsForm
                 XtraMessageBox.Show($"加载菜单异常!{ex.Message}");
                 throw;
             }
-        } 
+        }
         #endregion
 
         #region 数据加载
@@ -77,11 +77,15 @@ namespace StrayRabbit.MMS.WindowsForm
                 var childForm = (XtraForm)asm.CreateInstance(e.Link.Item.Tag.ToString());
                 if (childForm != null)
                 {
+                    UserInfo.ChildHeight = this.Height -230;
+                    UserInfo.ChildWidth = this.Width - 200;
+
                     childForm.MdiParent = this;
+                    childForm.Dock = DockStyle.Fill;
                     childForm.Show();
                 }
             }
-        } 
+        }
         #endregion
 
         #region 判断是否已打开

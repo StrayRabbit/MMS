@@ -47,9 +47,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Add = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Select = new DevExpress.XtraEditors.SimpleButton();
             this.txt_IMEI = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -105,7 +103,7 @@
             // cmbPageNum
             // 
             this.cmbPageNum.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.cmbPageNum.Location = new System.Drawing.Point(582, 452);
+            this.cmbPageNum.Location = new System.Drawing.Point(560, 452);
             this.cmbPageNum.Name = "cmbPageNum";
             this.cmbPageNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -117,7 +115,7 @@
             // btn_Preview
             // 
             this.btn_Preview.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_Preview.Location = new System.Drawing.Point(538, 451);
+            this.btn_Preview.Location = new System.Drawing.Point(516, 451);
             this.btn_Preview.Name = "btn_Preview";
             this.btn_Preview.Size = new System.Drawing.Size(38, 23);
             this.btn_Preview.TabIndex = 26;
@@ -127,7 +125,7 @@
             // btn_MoveNext
             // 
             this.btn_MoveNext.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_MoveNext.Location = new System.Drawing.Point(647, 451);
+            this.btn_MoveNext.Location = new System.Drawing.Point(625, 451);
             this.btn_MoveNext.Name = "btn_MoveNext";
             this.btn_MoveNext.Size = new System.Drawing.Size(38, 23);
             this.btn_MoveNext.TabIndex = 25;
@@ -137,7 +135,7 @@
             // btn_Last
             // 
             this.btn_Last.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_Last.Location = new System.Drawing.Point(689, 451);
+            this.btn_Last.Location = new System.Drawing.Point(667, 451);
             this.btn_Last.Name = "btn_Last";
             this.btn_Last.Size = new System.Drawing.Size(38, 23);
             this.btn_Last.TabIndex = 24;
@@ -147,7 +145,7 @@
             // btn_First
             // 
             this.btn_First.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_First.Location = new System.Drawing.Point(494, 451);
+            this.btn_First.Location = new System.Drawing.Point(472, 451);
             this.btn_First.Name = "btn_First";
             this.btn_First.Size = new System.Drawing.Size(38, 23);
             this.btn_First.TabIndex = 23;
@@ -232,9 +230,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.simpleButton1);
             this.groupBox1.Controls.Add(this.btn_Add);
-            this.groupBox1.Controls.Add(this.btn_Select);
             this.groupBox1.Controls.Add(this.txt_IMEI);
             this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Location = new System.Drawing.Point(2, 9);
@@ -243,15 +239,6 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询条件";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Location = new System.Drawing.Point(257, 18);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 19;
-            this.simpleButton1.Text = "查  询";
             // 
             // btn_Add
             // 
@@ -262,14 +249,6 @@
             this.btn_Add.TabIndex = 18;
             this.btn_Add.Text = "新  增";
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // btn_Select
-            // 
-            this.btn_Select.Location = new System.Drawing.Point(776, 19);
-            this.btn_Select.Name = "btn_Select";
-            this.btn_Select.Size = new System.Drawing.Size(75, 23);
-            this.btn_Select.TabIndex = 17;
-            this.btn_Select.Text = "查   询";
             // 
             // txt_IMEI
             // 
@@ -316,10 +295,8 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlc_Name;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.SimpleButton btn_Add;
-        private DevExpress.XtraEditors.SimpleButton btn_Select;
         private DevExpress.XtraEditors.TextEdit txt_IMEI;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.GridControl gd_list;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

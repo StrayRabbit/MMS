@@ -161,7 +161,9 @@
             this.IsMdiContainer = true;
             this.Name = "Main";
             this.Ribbon = this.ribbonControl;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.StatusBar = this.ribbonStatusBar;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
