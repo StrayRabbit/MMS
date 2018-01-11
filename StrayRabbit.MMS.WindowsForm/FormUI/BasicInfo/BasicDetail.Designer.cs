@@ -55,6 +55,7 @@
             this.txt_name.Size = new System.Drawing.Size(100, 20);
             this.txt_name.TabIndex = 1;
             this.txt_name.EditValueChanged += new System.EventHandler(this.txt_name_EditValueChanged);
+            this.txt_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_name_KeyPress);
             // 
             // labelControl2
             // 

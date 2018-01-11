@@ -54,6 +54,7 @@
             this.txt_userName.Name = "txt_userName";
             this.txt_userName.Size = new System.Drawing.Size(160, 20);
             this.txt_userName.TabIndex = 16;
+            this.txt_userName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_password_KeyPress);
             // 
             // lblTitle
             // 

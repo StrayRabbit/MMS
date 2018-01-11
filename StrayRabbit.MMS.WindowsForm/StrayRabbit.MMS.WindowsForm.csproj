@@ -75,17 +75,23 @@
     <Compile Include="FormUI\BasicInfo\BasicDetail.Designer.cs">
       <DependentUpon>BasicDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUI\BasicInfo\BasicInfo.cs">
+    <Compile Include="FormUI\BasicInfo\BasicList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUI\BasicInfo\BasicInfo.Designer.cs">
-      <DependentUpon>BasicInfo.cs</DependentUpon>
+    <Compile Include="FormUI\BasicInfo\BasicList.Designer.cs">
+      <DependentUpon>BasicList.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUI\IntoStorage\IntoStorageManage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormUI\IntoStorage\IntoStorageManage.Designer.cs">
       <DependentUpon>IntoStorageManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUI\Medicine\MedicineList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\Medicine\MedicineList.Designer.cs">
+      <DependentUpon>MedicineList.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -107,11 +113,14 @@
     <EmbeddedResource Include="FormUI\BasicInfo\BasicDetail.resx">
       <DependentUpon>BasicDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUI\BasicInfo\BasicInfo.resx">
-      <DependentUpon>BasicInfo.cs</DependentUpon>
+    <EmbeddedResource Include="FormUI\BasicInfo\BasicList.resx">
+      <DependentUpon>BasicList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\IntoStorage\IntoStorageManage.resx">
       <DependentUpon>IntoStorageManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\Medicine\MedicineList.resx">
+      <DependentUpon>MedicineList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

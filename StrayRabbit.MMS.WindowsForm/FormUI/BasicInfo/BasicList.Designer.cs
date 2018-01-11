@@ -1,6 +1,6 @@
 ﻿namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
 {
-    partial class BasicInfo
+    partial class BasicList
     {
         /// <summary>
         /// Required designer variable.
@@ -47,8 +47,9 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Add = new DevExpress.XtraEditors.SimpleButton();
-            this.txt_IMEI = new DevExpress.XtraEditors.TextEdit();
+            this.txt_search = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
@@ -58,7 +59,7 @@
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_IMEI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_search.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -230,8 +231,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_search);
             this.groupBox1.Controls.Add(this.btn_Add);
-            this.groupBox1.Controls.Add(this.txt_IMEI);
+            this.groupBox1.Controls.Add(this.txt_search);
             this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Location = new System.Drawing.Point(2, 9);
             this.groupBox1.Name = "groupBox1";
@@ -239,6 +241,16 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询条件";
+            // 
+            // btn_search
+            // 
+            this.btn_search.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_search.Location = new System.Drawing.Point(231, 20);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(75, 23);
+            this.btn_search.TabIndex = 19;
+            this.btn_search.Text = "查  询";
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // btn_Add
             // 
@@ -250,20 +262,21 @@
             this.btn_Add.Text = "新  增";
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
-            // txt_IMEI
+            // txt_search
             // 
-            this.txt_IMEI.Location = new System.Drawing.Point(55, 21);
-            this.txt_IMEI.Name = "txt_IMEI";
-            this.txt_IMEI.Size = new System.Drawing.Size(186, 20);
-            this.txt_IMEI.TabIndex = 14;
+            this.txt_search.Location = new System.Drawing.Point(88, 21);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(137, 20);
+            this.txt_search.TabIndex = 14;
+            this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(13, 23);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(36, 14);
+            this.labelControl1.Size = new System.Drawing.Size(65, 14);
             this.labelControl1.TabIndex = 13;
-            this.labelControl1.Text = "名称：";
+            this.labelControl1.Text = "名称/简码：";
             // 
             // BasicInfo
             // 
@@ -283,7 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_IMEI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_search.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,7 +308,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlc_Name;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.SimpleButton btn_Add;
-        private DevExpress.XtraEditors.TextEdit txt_IMEI;
+        private DevExpress.XtraEditors.TextEdit txt_search;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gd_list;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -311,5 +324,6 @@
         private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.SimpleButton btn_search;
     }
 }

@@ -15,23 +15,22 @@ using StrayRabbit.MMS.Domain.Model;
 
 namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
 {
-    public partial class BasicInfo : DevExpress.XtraEditors.XtraForm
+    public partial class BasicList : DevExpress.XtraEditors.XtraForm
     {
         private int pageSize = 15;      //一页多少条
         private int pageIndex = 1;      //当前页数
 
         List<BasicDictionary> dataList;      //全部数据
 
-        public BasicInfo()
+        public BasicList()
         {
             InitializeComponent();
         }
 
         #region 加载数据
-        private void BasicInfo_Load(object sender, EventArgs e)
-        {
+        private void BasicInfo_Load(object sender, EventArgs e){
             splitContainerControl1.Height = UserInfo.ChildHeight + 10;
-            splitContainerControl1.Width= UserInfo.ChildWidth;
+            splitContainerControl1.Width = UserInfo.ChildWidth;
             tl_dict.Height = UserInfo.ChildHeight;
             gd_list.Height = UserInfo.ChildHeight - 65;
             lbl_Sum.Top = UserInfo.ChildHeight - 22;
@@ -43,7 +42,9 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
             btn_Last.Top = UserInfo.ChildHeight - 26;
 
             groupBox1.Width = UserInfo.ChildWidth - 250;
-            gd_list.Width= UserInfo.ChildWidth - 250;
+            gd_list.Width = UserInfo.ChildWidth - 250;
+            //btn_search.Left= UserInfo.ChildWidth - 150;
+            //btn_search.Top = btn_Add.Top;
 
             InitTree();
         }
@@ -59,7 +60,9 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
             {
                 using (var db = SugarDao.GetInstance())
                 {
-                    var list = db.Queryable<BasicDictionary>().Where(t => t.ParentId == 1).ToList();
+                    var list = db.Queryable<BasicDictionary>()
+                        .Where(t => t.ParentId == 1)
+                        .ToList();
 
                     if (list == null || !list.Any())
                     {
@@ -106,6 +109,15 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
                 using (var db = SugarDao.GetInstance())
                 {
                     dataList = db.Queryable<BasicDictionary>().Where(t => t.ParentId == id).ToList();
+
+                    if (!string.IsNullOrWhiteSpace(txt_search.Text.Trim()))
+                    {
+                        dataList =
+                            dataList.Where(
+                                t =>
+                                    t.Name.Contains(txt_search.Text.Trim()) ||
+                                    t.Character.Contains(txt_search.Text.Trim())).ToList();
+                    }
                 }
                 InitGridView();
                 //加载页数
@@ -345,8 +357,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
                     {
                         if (db.Delete<BasicDictionary, int>(id))
                         {
-                            XtraMessageBox.Show("删除成功!", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                             tl_dict_FocusedNodeChanged(null, null);
                         }
                         else
@@ -361,6 +371,23 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
                 XtraMessageBox.Show("删除异常!" + ex.Message);
             }
         }
+        #endregion
+
+        #region 查询
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            tl_dict_FocusedNodeChanged(null, null);
+        }
+        #endregion
+        #region 回车
+        private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //回车按钮
+            if (e.KeyChar == 13)
+            {
+                tl_dict_FocusedNodeChanged(null, null);
+            }
+        } 
         #endregion
     }
 }

@@ -25,8 +25,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
         public BasicDetail()
         {
             InitializeComponent();
-
-
         }
 
         #region 保存
@@ -120,6 +118,17 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
         {
             DialogResult = DialogResult.OK;
             this.Close();
+        }
+        #endregion
+
+        #region 回车
+        private void txt_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //回车按钮
+            if (e.KeyChar == 13)
+            {
+                btn_save_Click(sender, e);
+            }
         } 
         #endregion
     }

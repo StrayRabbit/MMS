@@ -33,10 +33,10 @@ namespace StrayRabbit.MMS.WindowsForm
             else
             {
                 InitUserInfo(user);
-
+                this.Hide();
                 var form = new Main();
                 form.ShowDialog();
-                this.Close();
+               
             }
         }
 

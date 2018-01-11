@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\BasicDictionary.cs" />
+    <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\Sys_Module.cs" />
     <Compile Include="Model\Sys_Role.cs" />
     <Compile Include="Model\Sys_Role_Module_Mapping.cs" />
