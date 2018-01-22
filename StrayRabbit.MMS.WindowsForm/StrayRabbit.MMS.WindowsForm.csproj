@@ -87,6 +87,12 @@
     <Compile Include="FormUI\IntoStorage\IntoStorageManage.Designer.cs">
       <DependentUpon>IntoStorageManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUI\Medicine\MedicineDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\Medicine\MedicineDetail.Designer.cs">
+      <DependentUpon>MedicineDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUI\Medicine\MedicineList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\IntoStorage\IntoStorageManage.resx">
       <DependentUpon>IntoStorageManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\Medicine\MedicineDetail.resx">
+      <DependentUpon>MedicineDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\Medicine\MedicineList.resx">
       <DependentUpon>MedicineList.cs</DependentUpon>

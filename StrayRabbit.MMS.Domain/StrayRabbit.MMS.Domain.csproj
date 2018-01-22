@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\Medicine\MedicineListDto.cs" />
     <Compile Include="Model\BasicDictionary.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\Sys_Module.cs" />

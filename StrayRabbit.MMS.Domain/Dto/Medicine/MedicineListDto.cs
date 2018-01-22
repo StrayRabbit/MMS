@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrayRabbit.MMS.Domain.Model
+namespace StrayRabbit.MMS.Domain.Dto.Medicine
 {
-    /// <summary>
-    /// 药品信息
-    /// </summary>
-    public class Medicine
+    public class MedicineListDto
     {
         public int Id { get; set; }
         /// <summary>
@@ -23,7 +20,7 @@ namespace StrayRabbit.MMS.Domain.Model
         /// <summary>
         /// 所属经营范围
         /// </summary>
-        public int? JYFWId { get; set; }
+        public string JyfwName { get; set; }
         /// <summary>
         /// 通用名称
         /// </summary>
@@ -35,43 +32,28 @@ namespace StrayRabbit.MMS.Domain.Model
         /// <summary>
         /// 包装规格
         /// </summary>
-        public int? PackModelId { get; set; }
+        public string BzggName { get; set; }
         /// <summary>
         /// 单位
         /// </summary>
-        public int? UnitId { get; set; }
-        /// <summary>
-        /// 药剂分类
-        /// </summary>
-        public int? TypeId { get; set; }
+        public string UnitName { get; set; }
         /// <summary>
         /// 监管分类
         /// </summary>
-        public int? JGFLId { get; set; }
+        public string JgflName { get; set; }
         /// <summary>
         /// 供应商
         /// </summary>
-        public int? SupplierId { get; set; }
-        /// <summary>
-        /// 生产厂家
-        /// </summary>
-        public int? SCCJId { get; set; }
+        public string GysName { get; set; }
+        
         /// <summary>
         /// 产品注册证批件号
         /// </summary>
         public string CPZC { get; set; }
-        /// <summary>
-        /// 批准文号有效期
-        /// </summary>
-        public string PZWH { get; set; }
-        /// <summary>
-        /// 是否处方药
-        /// </summary>
-        public bool IsPrescription { get; set; }
 
         /// <summary>
-        /// 状态 1有效 -1无效
+        /// 药品分类
         /// </summary>
-        public int Status { get; set; }
+        public string YpflName { get; set; }
     }
 }

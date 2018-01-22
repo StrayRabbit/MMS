@@ -31,8 +31,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
         private void BasicInfo_Load(object sender, EventArgs e){
             splitContainerControl1.Height = UserInfo.ChildHeight + 10;
             splitContainerControl1.Width = UserInfo.ChildWidth;
-            tl_dict.Height = UserInfo.ChildHeight;
-            gd_list.Height = UserInfo.ChildHeight - 65;
+            tl_dict.Height = UserInfo.ChildHeight;gd_list.Height = UserInfo.ChildHeight - 65;
             lbl_Sum.Top = UserInfo.ChildHeight - 22;
 
             btn_First.Top = UserInfo.ChildHeight - 26;
@@ -379,6 +378,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
             tl_dict_FocusedNodeChanged(null, null);
         }
         #endregion
+
         #region 回车
         private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
         {

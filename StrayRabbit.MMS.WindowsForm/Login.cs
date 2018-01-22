@@ -17,8 +17,7 @@ namespace StrayRabbit.MMS.WindowsForm
         private void btn_login_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_userName.Text.Trim()) ||
-                   string.IsNullOrWhiteSpace(txt_password.Text.Trim()))
-            {
+                   string.IsNullOrWhiteSpace(txt_password.Text.Trim())){
                 XtraMessageBox.Show("用户名或密码不能为空!");
                 return;
             }
