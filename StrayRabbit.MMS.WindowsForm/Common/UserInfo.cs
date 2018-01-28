@@ -16,6 +16,11 @@ namespace StrayRabbit.MMS.WindowsForm
         /// 用户名称
         /// </summary>
         public static string UserName { get; set; }
+
+        /// <summary>
+        /// 用户账号
+        /// </summary>
+        public static string Account { get; set; }
         /// <summary>
         /// 用户角色Id
         /// </summary>

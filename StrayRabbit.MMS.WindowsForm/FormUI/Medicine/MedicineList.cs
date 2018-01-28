@@ -8,6 +8,7 @@ using SQLiteSugar;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Dto.Medicine;
 using StrayRabbit.MMS.Domain.Model;
+using StrayRabbit.MMS.Service.ServiceImp;
 
 namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
 {
@@ -41,22 +42,8 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
             {
                 InitControlPosition();
 
-                using (var db = SugarDao.GetInstance())
-                {
-                    dataList = db.Queryable<Domain.Model.Medicine>()
-                        .JoinTable<BasicDictionary>((m, jyfw) => m.JYFWId == jyfw.Id)
-                        .JoinTable<BasicDictionary>((m, ypgg) => m.PackModelId == ypgg.Id)
-                        .JoinTable<BasicDictionary>((m, dw) => m.UnitId == dw.Id)
-                        .JoinTable<BasicDictionary>((m, jgfl) => m.JGFLId == jgfl.Id)
-                        .JoinTable<BasicDictionary>((m, ypfl) => m.TypeId == ypfl.Id)
-                        .JoinTable<BasicDictionary>((m, gys) => m.SupplierId == gys.Id)
-                        .Where(" Status=1 and (m.Name like '%" + txt_search.Text.Trim() + "%' or m.NameCode like '%" +
-                               txt_search.Text.Trim() + "%')")
-                        .Select<MedicineListDto>(
-                            "m.Id,m.Name,m.NameCode,jyfw.Name as jyfwName,m.CommonName,ypgg.Name BzggName,dw.Name as UnitName,jgfl.Name JgflName,ypfl.Name ypflName,gys.Name gysName,m.CPZC,ypfl.Name as YpflName")
-                        .OrderBy(m => m.Id, OrderByType.Desc)
-                        .ToList();
-                }
+                var service = new MedicineService();
+                dataList = service.GetMedicineList(txt_search.Text.Trim());
 
                 InitData();
 
@@ -307,6 +294,31 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
         }
         #endregion
 
+        #region 双击
+        private void gd_list_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var frm = new MedicineDetail
+                {
+                    detailId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Id")),
+                };
+                if (DialogResult.OK == frm.ShowDialog())
+                {
+                    MedicineList_Load(null, null);
+                }
+                else
+                {
+                    XtraMessageBox.Show("编辑失败!", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("编辑出错!" + ex.Message);
+            }
+        }
+        #endregion
+
         #region 回车
         private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -317,5 +329,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
             }
         }
         #endregion
+
+        
     }
 }

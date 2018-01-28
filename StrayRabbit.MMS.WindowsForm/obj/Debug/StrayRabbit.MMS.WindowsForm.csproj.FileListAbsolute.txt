@@ -110,3 +110,5 @@ E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.pdb
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\StrayRabbit.MMS.WindowsForm.exe.config
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\StrayRabbit.MMS.WindowsForm.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage.IntoStorage.resources
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage.IntoStorageDetail.resources

@@ -38,7 +38,8 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
                 }
 
                 using (var db = SugarDao.GetInstance())
-                {if (string.IsNullOrWhiteSpace(txt_name.Text.Trim()))
+                {
+                    if (string.IsNullOrWhiteSpace(txt_name.Text.Trim()))
                     {
                         XtraMessageBox.Show("请您输入名称!", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;

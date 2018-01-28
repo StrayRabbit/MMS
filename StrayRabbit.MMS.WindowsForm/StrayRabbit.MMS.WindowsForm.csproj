@@ -81,6 +81,18 @@
     <Compile Include="FormUI\BasicInfo\BasicList.Designer.cs">
       <DependentUpon>BasicList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUI\IntoStorage\IntoStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\IntoStorage\IntoStorage.Designer.cs">
+      <DependentUpon>IntoStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUI\IntoStorage\IntoStorageDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\IntoStorage\IntoStorageDetail.Designer.cs">
+      <DependentUpon>IntoStorageDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUI\IntoStorage\IntoStorageManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\BasicInfo\BasicList.resx">
       <DependentUpon>BasicList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\IntoStorage\IntoStorage.resx">
+      <DependentUpon>IntoStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\IntoStorage\IntoStorageDetail.resx">
+      <DependentUpon>IntoStorageDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\IntoStorage\IntoStorageManage.resx">
       <DependentUpon>IntoStorageManage.cs</DependentUpon>
@@ -184,6 +202,8 @@
   <ItemGroup>
     <None Include="Resources\ok.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FormUI\OutStorage\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

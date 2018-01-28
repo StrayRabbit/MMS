@@ -120,6 +120,7 @@
             this.gd_list.TabIndex = 16;
             this.gd_list.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gd_list.DoubleClick += new System.EventHandler(this.gd_list_DoubleClick);
             // 
             // contextMenuStrip1
             // 

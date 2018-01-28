@@ -17,7 +17,8 @@ namespace StrayRabbit.MMS.WindowsForm
         private void btn_login_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_userName.Text.Trim()) ||
-                   string.IsNullOrWhiteSpace(txt_password.Text.Trim())){
+                   string.IsNullOrWhiteSpace(txt_password.Text.Trim()))
+            {
                 XtraMessageBox.Show("用户名或密码不能为空!");
                 return;
             }
@@ -35,7 +36,7 @@ namespace StrayRabbit.MMS.WindowsForm
                 this.Hide();
                 var form = new Main();
                 form.ShowDialog();
-               
+
             }
         }
 
@@ -72,6 +73,7 @@ namespace StrayRabbit.MMS.WindowsForm
             UserInfo.UserId = user.Id;
             UserInfo.RoleId = user.RoleId;
             UserInfo.UserName = user.Name;
+            UserInfo.Account = user.Account;
         }
         #endregion
         #endregion

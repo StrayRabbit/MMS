@@ -109,5 +109,12 @@ namespace StrayRabbit.MMS.WindowsForm
             return false;
         }
         #endregion
+
+        #region 关闭窗体
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        } 
+        #endregion
     }
 }
