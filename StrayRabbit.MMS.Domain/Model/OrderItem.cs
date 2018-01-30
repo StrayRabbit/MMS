@@ -26,6 +26,11 @@ namespace StrayRabbit.MMS.Domain.Model
         public int MedicineId { get; set; }
 
         /// <summary>
+        /// 库存id
+        /// </summary>
+        public int StockId { get; set; }
+
+        /// <summary>
         /// 批号
         /// </summary>
         public string BatchNum { get; set; }

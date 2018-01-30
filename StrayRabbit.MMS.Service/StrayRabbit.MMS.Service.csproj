@@ -46,11 +46,13 @@
     <Compile Include="IService\IMedicineService.cs" />
     <Compile Include="IService\IOrderItemService.cs" />
     <Compile Include="IService\IOrderService.cs" />
+    <Compile Include="IService\IStockService.cs" />
     <Compile Include="IService\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceImp\MedicineService.cs" />
     <Compile Include="ServiceImp\OrderItemService.cs" />
     <Compile Include="ServiceImp\OrderService.cs" />
+    <Compile Include="ServiceImp\StockService.cs" />
     <Compile Include="ServiceImp\UserService.cs" />
   </ItemGroup>
   <ItemGroup />

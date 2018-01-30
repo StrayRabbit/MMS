@@ -111,6 +111,18 @@
     <Compile Include="FormUI\Medicine\MedicineList.Designer.cs">
       <DependentUpon>MedicineList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUI\OutStorage\OutStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\OutStorage\OutStorage.Designer.cs">
+      <DependentUpon>OutStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUI\OutStorage\OutStorageManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\OutStorage\OutStorageManage.Designer.cs">
+      <DependentUpon>OutStorageManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\Medicine\MedicineList.resx">
       <DependentUpon>MedicineList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\OutStorage\OutStorage.resx">
+      <DependentUpon>OutStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\OutStorage\OutStorageManage.resx">
+      <DependentUpon>OutStorageManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -202,8 +220,6 @@
   <ItemGroup>
     <None Include="Resources\ok.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FormUI\OutStorage\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
