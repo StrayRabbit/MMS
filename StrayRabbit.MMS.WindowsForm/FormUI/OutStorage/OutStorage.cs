@@ -543,26 +543,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
                     //新建一条库存记录
                     else
                     {
-                        if (Convert.ToBoolean(db.Insert(new Stock()
-                        {
-                            Cost = orderItem.Cost,
-                            CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                            CreateUserId = UserInfo.Account,
-                            MedicineId = orderItem.MedicineId,
-                            Sale = orderItem.Sale,
-                            Amount = orderItem.Amount * -1,
-                            BatchNum = orderItem.BatchNum,
-                            BeginDate = orderItem.BeginDate,
-                            EndDate = orderItem.EndDate,
-                            Yxq = orderItem.Yxq,
-                        })))
-                        {
-                            result = "";
-                        }
-                        else
-                        {
-                            return "新增库存记录失败!";
-                        }
+                        return "未找到该库存!";
                     }
 
                     //插入库存日志
@@ -598,6 +579,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
 
         #endregion
 
-        
+
     }
 }

@@ -28,8 +28,9 @@ namespace StrayRabbit.MMS.Service.ServiceImp
                         .JoinTable<Medicine, BasicDictionary>((s, m, ypgg) => m.PackModelId == ypgg.Id)     //药品规格
                         .JoinTable<Medicine, BasicDictionary>((s, m, sccj) => m.SCCJId == sccj.Id)      //生产厂家
                         .JoinTable<Medicine, BasicDictionary>((s, m, ypdw) => m.UnitId == ypdw.Id)      //药品单位
+                        .JoinTable<Medicine, BasicDictionary>((s, m, gys) => m.SupplierId == gys.Id)      //药品单位
                         .Where<Medicine>((s, m) => s.Amount > 0 && (m.NameCode.Contains(name) || m.Name.Contains(name)))
-                        .Select<StockListDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,ypgg.Name YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate")
+                        .Select<StockListDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,ypgg.Name YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName")
                         .OrderBy(m => m.Id, OrderByType.Asc)
                         .ToList();
                 }

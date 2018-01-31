@@ -66,5 +66,10 @@
         /// 到期日期
         /// </summary>
         public string EndDate { get; set; }
+
+        /// <summary>
+        /// 供应商名称
+        /// </summary>
+        public string GysName { get; set; }
     }
 }

@@ -123,6 +123,12 @@
     <Compile Include="FormUI\OutStorage\OutStorageManage.Designer.cs">
       <DependentUpon>OutStorageManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUI\Stock\StockManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\Stock\StockManage.Designer.cs">
+      <DependentUpon>StockManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\OutStorage\OutStorageManage.resx">
       <DependentUpon>OutStorageManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\Stock\StockManage.resx">
+      <DependentUpon>StockManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

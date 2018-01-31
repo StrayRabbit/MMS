@@ -45,5 +45,6 @@
         /// <summary>
         /// 创建时间
         /// </summary>
-        public string CreateTime { get; set; }}
+        public string CreateTime { get; set; }
+    }
 }

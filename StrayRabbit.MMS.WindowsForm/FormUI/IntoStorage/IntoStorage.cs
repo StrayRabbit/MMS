@@ -461,6 +461,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
                 }
 
                 var stockCurr = new Stock();
+                var gysId = int.Parse(lue_gys.EditValue.ToString());
                 foreach (var orderItem in orderItems)
                 {
                     stockCurr = db.Queryable<Stock>()
