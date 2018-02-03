@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SQLiteSugar;
 using StrayRabbit.MMS.Common;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Dto.Stock;
 using StrayRabbit.MMS.Domain.Model;
@@ -196,7 +197,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
                         XtraMessageBox.Show("当前数量不能大于库存数量!", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-
                     var item = new OrderItem()
                     {
                         OrderNum = _orderNum,
@@ -207,7 +207,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
                         MedicineId = entity.MedicineId,
                         BeginDate = entity.BeginDate,
                         EndDate = entity.EndDate,
-                        Yxq = entity.Yxq,
                         StockId = stockId,
                     };
 
@@ -232,6 +231,15 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
                         InitGridViewList();
 
                         CalcHJ();
+
+                        var medicine =
+                            db.Queryable<Domain.Model.Medicine>().SingleOrDefault(t => t.Id == entity.MedicineId);
+                        Log.Info(new LoggerInfo()
+                        {
+                            LogType = LogType.出库明细.ToString(),
+                            CreateUserId = UserInfo.Account,
+                            Message = $"【新增成功】单号:{item.OrderNum},库存Id:{entity.Id},药品名称:{medicine?.Name},批号:{entity.BatchNum},数量:{item.Amount},进价:{entity.Cost},零售价:{item.Sale}"
+                        });
                     }
                 }
                 else
@@ -266,6 +274,14 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
                         {
                             InitGridViewList();
                             CalcHJ();
+
+                            var medicineName = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MedicineName").ToString();
+                            Log.Info(new LoggerInfo()
+                            {
+                                LogType = LogType.出库明细.ToString(),
+                                CreateUserId = UserInfo.Account,
+                                Message = $"【删除成功】明细Id{id},单号:{_orderNum},药品名称:{medicineName}"
+                            });
                         }
                         else
                         {
@@ -317,6 +333,13 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
                     if (string.IsNullOrWhiteSpace(errorMsg))
                     {
                         db.CommitTran();
+
+                        Log.Info(new LoggerInfo()
+                        {
+                            LogType = LogType.销售出库.ToString(),
+                            CreateUserId = UserInfo.Account,
+                            Message = $"【结账成功】单号:{_orderNum},单据Id:{orderId},描述:{entity.Description},合计:{txt_hj.Text.Trim()},创建日期:{entity.CreateTime},创建人:{entity.CreateUserId}",
+                        });
 
                         DialogResult = DialogResult.OK;
                         this.Close();
@@ -531,7 +554,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
 
                         if (
                             Convert.ToBoolean(
-                                db.Update<Stock>($" Amount=Amount-{orderItem.Amount}", t => t.Id == orderItem.StockId)))
+                                db.Update<Stock>($" Amount=Amount-{orderItem.Amount},TotalSales=TotalSales+{orderItem.Amount}", t => t.Id == orderItem.StockId)))
                         {
                             result = "";
                         }

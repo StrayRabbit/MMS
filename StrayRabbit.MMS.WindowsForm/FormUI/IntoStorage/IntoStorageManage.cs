@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using SQLiteSugar;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Model;
 using StrayRabbit.MMS.Service.IService;
@@ -357,6 +358,13 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
                     {
                         if (db.Update<Domain.Model.Order>("Status=-1", t => t.Id == id))
                         {
+                            Log.Info(new LoggerInfo()
+                            {
+                                LogType = LogType.采购入库.ToString(),
+                                CreateUserId = UserInfo.Account,
+                                Message = $"【删除成功】 Id:{id}",
+                            });
+
                             InitData();
                         }
                         else

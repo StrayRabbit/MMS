@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SQLiteSugar;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Dto.Medicine;
 using StrayRabbit.MMS.Domain.Model;
@@ -253,7 +254,17 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
                     {
                         if (db.Update<Domain.Model.Medicine>("Status=-1", t => t.Id == id))
                         {
+                            string name = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
+
                             MedicineList_Load(null, null);
+
+                            
+                            Log.Info(new LoggerInfo()
+                            {
+                                LogType = LogType.药品信息.ToString(),
+                                CreateUserId = UserInfo.Account,
+                                Message = $"【删除成功】 Id:{id},名称:{name}",
+                            });
                         }
                         else
                         {

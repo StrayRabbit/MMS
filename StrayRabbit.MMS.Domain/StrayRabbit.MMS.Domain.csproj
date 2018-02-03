@@ -53,6 +53,7 @@
     <Compile Include="Dto\Medicine\MedicineListDto.cs" />
     <Compile Include="Dto\OrderItem\OrderItemListDto.cs" />
     <Compile Include="Dto\Order\OrderListDto.cs" />
+    <Compile Include="Dto\Stock\StockDto.cs" />
     <Compile Include="Dto\Stock\StockListDto.cs" />
     <Compile Include="Model\BasicDictionary.cs" />
     <Compile Include="Model\Medicine.cs" />

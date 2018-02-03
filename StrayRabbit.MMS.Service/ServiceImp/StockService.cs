@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using SQLiteSugar;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Dto.OrderItem;
@@ -30,9 +31,47 @@ namespace StrayRabbit.MMS.Service.ServiceImp
                         .JoinTable<Medicine, BasicDictionary>((s, m, ypdw) => m.UnitId == ypdw.Id)      //药品单位
                         .JoinTable<Medicine, BasicDictionary>((s, m, gys) => m.SupplierId == gys.Id)      //药品单位
                         .Where<Medicine>((s, m) => s.Amount > 0 && (m.NameCode.Contains(name) || m.Name.Contains(name)))
-                        .Select<StockListDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,ypgg.Name YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName")
+                        .Select<StockListDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,ypgg.Name YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName,s.TotalSales")
                         .OrderBy(m => m.Id, OrderByType.Asc)
                         .ToList();
+                }
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 查询库存信息
+        /// </summary>
+        /// <param name="id">库存Id</param>
+        /// <returns></returns>
+        public StockDto GetStockInfo(int id)
+        {
+            var result = new StockDto();
+
+            try
+            {
+                using (var db = SugarDao.GetInstance())
+                {
+                    var list = db.Queryable<Domain.Model.Stock>()
+                        .JoinTable<Medicine>((s, m) => s.MedicineId == m.Id)
+                        .JoinTable<Medicine, BasicDictionary>((s, m, ypgg) => m.PackModelId == ypgg.Id)     //药品规格
+                        .JoinTable<Medicine, BasicDictionary>((s, m, sccj) => m.SCCJId == sccj.Id)      //生产厂家
+                        .JoinTable<Medicine, BasicDictionary>((s, m, ypdw) => m.UnitId == ypdw.Id)      //药品单位
+                        .JoinTable<Medicine, BasicDictionary>((s, m, gys) => m.SupplierId == gys.Id)      //供应商
+                        .JoinTable<Medicine, BasicDictionary>((s, m, jyfw) => m.JYFWId == jyfw.Id)      //经营范围
+                        .Where($" s.Id={id}")
+                        .Select<StockDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,ypgg.Name YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName,s.Cost,jyfw.Name JyfwName").ToList();
+
+                    if (list != null && list.Any())
+                    {
+                        result = list[0];
+                    }
                 }
             }
             catch (System.Exception)

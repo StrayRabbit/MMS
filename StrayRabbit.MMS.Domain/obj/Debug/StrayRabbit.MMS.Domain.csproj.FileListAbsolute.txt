@@ -3,4 +3,3 @@ E:\GitHub\MMS\StrayRabbit.MMS.Domain\bin\Debug\StrayRabbit.MMS.Domain.pdb
 E:\GitHub\MMS\StrayRabbit.MMS.Domain\obj\Debug\StrayRabbit.MMS.Domain.csproj.CoreCompileInputs.cache
 E:\GitHub\MMS\StrayRabbit.MMS.Domain\obj\Debug\StrayRabbit.MMS.Domain.dll
 E:\GitHub\MMS\StrayRabbit.MMS.Domain\obj\Debug\StrayRabbit.MMS.Domain.pdb
-E:\GitHub\MMS\StrayRabbit.MMS.Domain\obj\Debug\StrayRabbit.MMS.Domain.csprojResolveAssemblyReference.cache

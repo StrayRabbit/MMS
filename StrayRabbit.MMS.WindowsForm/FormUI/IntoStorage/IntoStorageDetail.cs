@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using SQLiteSugar;
 using StrayRabbit.MMS.Common;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Dto.Medicine;
 using StrayRabbit.MMS.Domain.Model;
@@ -56,7 +57,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
                             txt_sccj.Text = medicineInfo.GysName;
                             txt_beginDate.Text = entity.BeginDate;
                             txt_endDate.Text = entity.EndDate;
-                            txt_yxq.Text = entity.Yxq.ToString();
                             txt_cost.Text = entity.Cost.ToString();
                             txt_Amount.Text = entity.Amount.ToString();
                             txt_batchNum.Text = entity.BatchNum;
@@ -238,7 +238,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
                     Sale = decimal.Parse(txt_sale.Text.Trim()),
                     BatchNum = txt_batchNum.Text.Trim(),
                     BeginDate = string.IsNullOrWhiteSpace(txt_beginDate.Text.Trim()) ? null : DateTime.Parse(txt_beginDate.Text.Trim()).ToString("yyyy-MM-dd"),
-                    Yxq = string.IsNullOrWhiteSpace(txt_yxq.Text.Trim()) ? 0 : int.Parse(txt_yxq.Text.Trim()),
                     EndDate = string.IsNullOrWhiteSpace(txt_endDate.Text.Trim()) ? null : DateTime.Parse(txt_endDate.Text.Trim()).ToString("yyyy-MM-dd"),
                 };
 
@@ -248,6 +247,17 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
 
                     if (Convert.ToBoolean(result))
                     {
+                        string msg = _detailId > 0 ? $"【修改成功】 " : $"【新增成功】";
+
+                        var medicine =
+                            db.Queryable<Domain.Model.Medicine>().SingleOrDefault(t => t.Id == entity.MedicineId);
+                        Log.Info(new LoggerInfo()
+                        {
+                            LogType = LogType.入库明细.ToString(),
+                            CreateUserId = UserInfo.Account,
+                            Message = msg + $"单号:{entity.OrderNum},Id:{entity.Id},药品名称:{medicine?.Name},数量:{entity.Amount},进价:{entity.Cost},零售价:{entity.Sale},批号:{entity.BatchNum},生产日期:{entity.BeginDate},到期日期:{entity.EndDate}"
+                        });
+
                         DialogResult = DialogResult.OK;
                         this.Close();
                     }

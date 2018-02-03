@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using SQLiteSugar;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Model;
 using StrayRabbit.MMS.Service.IService;
@@ -268,6 +269,13 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
                 {
                     if (db.Delete<Domain.Model.OrderItem>(t => t.Id == id))
                     {
+                        Log.Info(new LoggerInfo()
+                        {
+                            LogType = LogType.入库明细.ToString(),
+                            CreateUserId = UserInfo.Account,
+                            Message = $"【删除成功】 Id:{id},单号:{txt_OrderNum.Text.Trim()}",
+                        });
+
                         InitGridView();
                     }
                     else
@@ -338,6 +346,14 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
 
                         var orderId = detailId > 0 ? detailId : int.Parse(result.ToString());
                         db.Update<OrderItem>(" OrderId= " + orderId, t => t.OrderNum == txt_OrderNum.Text.Trim() && t.OrderId <= 0);
+
+                        string msg = detailId > 0 ? $"【修改成功】" : $"【保存成功】";
+                        Log.Info(new LoggerInfo()
+                        {
+                            LogType = LogType.采购入库.ToString(),
+                            CreateUserId = UserInfo.Account,
+                            Message = msg + $" 单号:{entity.OrderNum},供应商:{lue_gys.Text},描述:{entity.Description},创建日期:{entity.CreateTime},创建人:{entity.CreateUserId}",
+                        });
 
                         this.Close();
                     }
@@ -411,6 +427,13 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
                     if (InsertStockByOrderNum(db))
                     {
                         db.CommitTran();
+
+                        Log.Info(new LoggerInfo()
+                        {
+                            LogType = LogType.采购入库.ToString(),
+                            CreateUserId = UserInfo.Account,
+                            Message = $"【提交成功】 Id:{orderId},单号:{entity.OrderNum},供应商:{lue_gys.Text},描述:{entity.Description},创建日期:{entity.CreateTime},创建人:{entity.CreateUserId}",
+                        });
                     }
                     else
                     {
@@ -499,7 +522,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
                             BatchNum = orderItem.BatchNum,
                             BeginDate = orderItem.BeginDate,
                             EndDate = orderItem.EndDate,
-                            Yxq = orderItem.Yxq,
                         })))
                         {
                             result = true;

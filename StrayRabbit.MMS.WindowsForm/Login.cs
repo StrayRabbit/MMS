@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Domain.Model;
 using StrayRabbit.MMS.Service.IService;
 using StrayRabbit.MMS.Service.ServiceImp;
@@ -34,9 +35,17 @@ namespace StrayRabbit.MMS.WindowsForm
             {
                 InitUserInfo(user);
                 this.Hide();
+
+                //业务日志
+                Log.Info(new LoggerInfo()
+                {
+                    Message = $"{user.Name} 登录成功!",
+                    CreateUserId = user.Account,
+                    LogType = LogType.其他.ToString()
+                });
+
                 var form = new Main();
                 form.ShowDialog();
-
             }
         }
 

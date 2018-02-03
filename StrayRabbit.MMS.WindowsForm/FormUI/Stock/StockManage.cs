@@ -196,6 +196,31 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.StockManage
         }
         #endregion
 
+        #region 双击GridView
+        private void gd_list_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var frm = new StockDetail
+                {
+                    _detailId = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Id")),
+                };
+                if (DialogResult.OK == frm.ShowDialog())
+                {
+                    StockManage_Load(null, null);
+                }
+                else
+                {
+                    XtraMessageBox.Show("编辑失败!", "操作提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("编辑出错!" + ex.Message);
+            }
+        }
+        #endregion
+
         #endregion
 
         #region 查询按钮

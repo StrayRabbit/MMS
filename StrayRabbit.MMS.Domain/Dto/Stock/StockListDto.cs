@@ -71,5 +71,11 @@
         /// 供应商名称
         /// </summary>
         public string GysName { get; set; }
+
+
+        /// <summary>
+        /// 累计销售
+        /// </summary>
+        public decimal TotalSales { get; set; }
     }
 }

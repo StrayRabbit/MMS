@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SQLiteSugar;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Common.ToolsHelper;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Model;
@@ -55,6 +56,15 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
 
                     if (Convert.ToBoolean(db.InsertOrUpdate(model)))
                     {
+                        string msg = id > 0 ? $"【{parentName} 修改成功】 " : $"【{parentName} 新增成功】";
+
+                        Log.Info(new LoggerInfo()
+                        {
+                            LogType = LogType.基础信息.ToString(),
+                            CreateUserId = UserInfo.Account,
+                            Message = msg + $" 名称:{Name},简写:{model.Character}"
+                        });
+
                         DialogResult = DialogResult.OK;
                         this.Close();
                     }
@@ -130,7 +140,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
             {
                 btn_save_Click(sender, e);
             }
-        } 
+        }
         #endregion
     }
 }

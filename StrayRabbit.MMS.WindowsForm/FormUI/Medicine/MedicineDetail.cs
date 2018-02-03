@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using SQLiteSugar;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Common.ToolsHelper;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Model;
@@ -154,6 +155,19 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
                 {
                     if (Convert.ToBoolean(db.InsertOrUpdate(entity)))
                     {
+                        string msg = detailId > 0 ? $"【修改成功】 " : $"【新增成功】";
+
+                        Log.Info(new LoggerInfo()
+                        {
+                            LogType = LogType.药品信息.ToString(),
+                            CreateUserId = UserInfo.Account,
+                            Message = msg + $"药品Id:{entity.Id},药品名称:{entity.Name},药品简写:{entity.NameCode},药品通用名称:{entity.CommonName}" +
+                                      $",药品通用名称简写:{entity.CommonNameCode},经营范围:{lue_ssjyfw.Text},药品规格:{lue_bzgg.Text},药品单位:{lue_unit.Text}" +
+                                      $",药剂分类:{lue_type.Text},监管分类:{lue_jgfl.Text},供应商:{lue_gys.Text},生产厂家:{lue_sccj.Text},产品注册证批件号:{txt_cpzc.Text.Trim()}" +
+                                      $",批准文号有效期:{ date_pzwh.Text.Trim()},是否处方药:{(entity.IsPrescription ? "是" : "否")}"
+
+                        });
+
                         DialogResult = DialogResult.OK;
                         this.Close();
                     }

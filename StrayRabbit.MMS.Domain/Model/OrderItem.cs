@@ -59,10 +59,5 @@ namespace StrayRabbit.MMS.Domain.Model
         /// 到期日期
         /// </summary>
         public string EndDate { get; set; }
-
-        /// <summary>
-        /// 有效期（单位/月）
-        /// </summary>
-        public int Yxq { get; set; }
     }
 }

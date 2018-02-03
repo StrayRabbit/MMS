@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SQLiteSugar;
+using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Common.ToolsHelper;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Model;
@@ -28,10 +29,11 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
         }
 
         #region 加载数据
-        private void BasicInfo_Load(object sender, EventArgs e){
+        private void BasicInfo_Load(object sender, EventArgs e)
+        {
             splitContainerControl1.Height = UserInfo.ChildHeight + 10;
             splitContainerControl1.Width = UserInfo.ChildWidth;
-            tl_dict.Height = UserInfo.ChildHeight;gd_list.Height = UserInfo.ChildHeight - 65;
+            tl_dict.Height = UserInfo.ChildHeight; gd_list.Height = UserInfo.ChildHeight - 65;
             lbl_Sum.Top = UserInfo.ChildHeight - 22;
 
             btn_First.Top = UserInfo.ChildHeight - 26;
@@ -357,6 +359,14 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
                         if (db.Delete<BasicDictionary, int>(id))
                         {
                             tl_dict_FocusedNodeChanged(null, null);
+
+                            string name = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
+                            Log.Info(new LoggerInfo()
+                            {
+                                LogType = LogType.基础信息.ToString(),
+                                CreateUserId = UserInfo.Account,
+                                Message = $"【{this.tl_dict.FocusedNode.GetValue("MenuName")} 删除成功】 Id:{id},名称:{name}",
+                            });
                         }
                         else
                         {
@@ -387,7 +397,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
             {
                 tl_dict_FocusedNodeChanged(null, null);
             }
-        } 
+        }
         #endregion
     }
 }

@@ -1,6 +1,8 @@
 E:\GitHub\MMS\StrayRabbit.MMS.Common\bin\Debug\StrayRabbit.MMS.Common.dll
 E:\GitHub\MMS\StrayRabbit.MMS.Common\bin\Debug\StrayRabbit.MMS.Common.pdb
-E:\GitHub\MMS\StrayRabbit.MMS.Common\obj\Debug\StrayRabbit.MMS.Common.csprojResolveAssemblyReference.cache
+E:\GitHub\MMS\StrayRabbit.MMS.Common\bin\Debug\log4net.dll
+E:\GitHub\MMS\StrayRabbit.MMS.Common\bin\Debug\log4net.xml
 E:\GitHub\MMS\StrayRabbit.MMS.Common\obj\Debug\StrayRabbit.MMS.Common.csproj.CoreCompileInputs.cache
 E:\GitHub\MMS\StrayRabbit.MMS.Common\obj\Debug\StrayRabbit.MMS.Common.dll
 E:\GitHub\MMS\StrayRabbit.MMS.Common\obj\Debug\StrayRabbit.MMS.Common.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.Common\obj\Debug\StrayRabbit.MMS.Common.csprojResolveAssemblyReference.cache

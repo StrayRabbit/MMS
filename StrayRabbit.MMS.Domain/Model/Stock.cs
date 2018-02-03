@@ -63,8 +63,8 @@
         public string EndDate { get; set; }
 
         /// <summary>
-        /// 有效期（单位/月）
+        /// 累计销售
         /// </summary>
-        public int Yxq { get; set; }
+        public decimal TotalSales { get; set; }
     }
 }
