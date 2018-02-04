@@ -5,13 +5,13 @@ namespace StrayRabbit.MMS.Service.IService
 {
     public interface IStockService
     {
-
         /// <summary>
         /// 根据条件查询库存列表
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">简写/名称</param>
+        /// <param name="dqts">到期天数</param>
         /// <returns></returns>
-        List<StockListDto> GetStockList(string name);
+        List<StockListDto> GetStockList(string name, int dqts = 0);
 
         /// <summary>
         /// 根据id查询库存信息

@@ -10,6 +10,7 @@ using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Dto.Medicine;
 using StrayRabbit.MMS.Domain.Model;
 using StrayRabbit.MMS.Service.ServiceImp;
+using Log = StrayRabbit.MMS.Common.log4net.Log;
 
 namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
 {

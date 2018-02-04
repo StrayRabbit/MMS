@@ -62,6 +62,7 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,7 +70,8 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gd_list = new DevExpress.XtraGrid.GridControl();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_syts = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPageNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -88,6 +90,7 @@
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gd_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_syts.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // 删除ToolStripMenuItem
@@ -233,6 +236,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_syts);
+            this.groupBox2.Controls.Add(this.labelControl4);
             this.groupBox2.Controls.Add(this.btn_search);
             this.groupBox2.Controls.Add(this.txt_search);
             this.groupBox2.Controls.Add(this.labelControl8);
@@ -245,10 +250,11 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(277, 19);
+            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_search.Location = new System.Drawing.Point(574, 19);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 23);
-            this.btn_search.TabIndex = 17;
+            this.btn_search.TabIndex = 18;
             this.btn_search.Text = "查   询";
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
@@ -257,7 +263,7 @@
             this.txt_search.Location = new System.Drawing.Point(85, 20);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(186, 20);
-            this.txt_search.TabIndex = 14;
+            this.txt_search.TabIndex = 17;
             this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
             // 
             // labelControl8
@@ -371,6 +377,14 @@
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 6;
             // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "累计销售";
+            this.gridColumn15.FieldName = "TotalSales";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 7;
+            // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "零售价";
@@ -430,13 +444,21 @@
             this.gridView1});
             this.gd_list.DoubleClick += new System.EventHandler(this.gd_list_DoubleClick);
             // 
-            // gridColumn15
+            // labelControl4
             // 
-            this.gridColumn15.Caption = "累计销售";
-            this.gridColumn15.FieldName = "TotalSales";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 7;
+            this.labelControl4.Location = new System.Drawing.Point(298, 23);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(60, 14);
+            this.labelControl4.TabIndex = 18;
+            this.labelControl4.Text = "剩余天数：";
+            // 
+            // txt_syts
+            // 
+            this.txt_syts.Location = new System.Drawing.Point(364, 20);
+            this.txt_syts.Name = "txt_syts";
+            this.txt_syts.Size = new System.Drawing.Size(186, 20);
+            this.txt_syts.TabIndex = 19;
+            this.txt_syts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
             // 
             // StockManage
             // 
@@ -469,6 +491,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gd_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_syts.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -516,5 +539,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txt_syts;
     }
 }

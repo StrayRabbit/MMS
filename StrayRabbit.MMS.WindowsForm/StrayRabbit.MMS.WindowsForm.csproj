@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.107.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.107.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -91,6 +92,12 @@
     </Compile>
     <Compile Include="FormUI\BasicInfo\BasicList.Designer.cs">
       <DependentUpon>BasicList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUI\BusinessLog\LogManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\BusinessLog\LogManage.Designer.cs">
+      <DependentUpon>LogManage.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUI\IntoStorage\IntoStorage.cs">
       <SubType>Form</SubType>
@@ -168,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\BasicInfo\BasicList.resx">
       <DependentUpon>BasicList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\BusinessLog\LogManage.resx">
+      <DependentUpon>LogManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUI\IntoStorage\IntoStorage.resx">
       <DependentUpon>IntoStorage.cs</DependentUpon>

@@ -15,8 +15,9 @@ namespace StrayRabbit.MMS.Service.ServiceImp
         /// 根据条件查询库存列表
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="dqts">到期天数</param>
         /// <returns></returns>
-        public List<StockListDto> GetStockList(string name)
+        public List<StockListDto> GetStockList(string name, int dqts = 0)
         {
             var result = new List<StockListDto>();
 
@@ -24,13 +25,20 @@ namespace StrayRabbit.MMS.Service.ServiceImp
             {
                 using (var db = SugarDao.GetInstance())
                 {
+                    var sqlWhere = $"s.Amount>0 and (m.NameCode like '%{name}%' or m.Name like '%{name}%')";
+                    if (dqts > 0)
+                    {
+                        sqlWhere += $" and julianday(enddate)-julianday('now')<={dqts}";
+                    }
+
                     result = db.Queryable<Domain.Model.Stock>()
                         .JoinTable<Medicine>((s, m) => s.MedicineId == m.Id)
                         .JoinTable<Medicine, BasicDictionary>((s, m, ypgg) => m.PackModelId == ypgg.Id)     //药品规格
                         .JoinTable<Medicine, BasicDictionary>((s, m, sccj) => m.SCCJId == sccj.Id)      //生产厂家
                         .JoinTable<Medicine, BasicDictionary>((s, m, ypdw) => m.UnitId == ypdw.Id)      //药品单位
                         .JoinTable<Medicine, BasicDictionary>((s, m, gys) => m.SupplierId == gys.Id)      //药品单位
-                        .Where<Medicine>((s, m) => s.Amount > 0 && (m.NameCode.Contains(name) || m.Name.Contains(name)))
+                                                                                                          //.Where<Medicine>((s, m) => s.Amount > 0 && (m.NameCode.Contains(name) || m.Name.Contains(name)))
+                        .Where(sqlWhere)
                         .Select<StockListDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,ypgg.Name YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName,s.TotalSales")
                         .OrderBy(m => m.Id, OrderByType.Asc)
                         .ToList();

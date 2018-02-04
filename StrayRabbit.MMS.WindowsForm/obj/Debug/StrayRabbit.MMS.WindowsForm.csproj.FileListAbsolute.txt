@@ -126,3 +126,4 @@ E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.csproj.CoreCompileInputs.cache
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.exe
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.FormUI.BusinessLog.LogManage.resources

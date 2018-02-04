@@ -8,8 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using SQLiteSugar;
+using StrayRabbit.MMS.Common;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Dto.Stock;
+using StrayRabbit.MMS.Domain.Model;
 using StrayRabbit.MMS.Service.IService;
 using StrayRabbit.MMS.Service.ServiceImp;
 
@@ -36,7 +40,11 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.StockManage
         {
             try
             {
-                dataList = _stockService.GetStockList(txt_search.Text.Trim());
+                int syts = (!string.IsNullOrWhiteSpace(txt_syts.Text.Trim()) && txt_syts.Text.Trim().IsNumber())
+                    ? int.Parse(txt_syts.Text.Trim())
+                    : 0;
+
+                dataList = _stockService.GetStockList(txt_search.Text.Trim(), syts);
 
                 InitGridView();
                 //加载页数
@@ -254,6 +262,64 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.StockManage
             panelControl1.Width = UserInfo.ChildWidth - 40;
             panelControl1.Top = UserInfo.ChildHeight - 28;
             panelControl1.Left = 5;
+        }
+        #endregion
+
+        #region 加载下拉列表
+        /// <summary>
+        /// 加载下拉列表
+        /// </summary> <param name="lue">下拉控件</param>
+        /// <param name="parentId">根节点ID</param>
+        private void InitLookUpEdit(LookUpEdit lue, int parentId)
+        {
+            try
+            {
+                if (parentId <= 0)
+                    return;
+
+                using (var db = SugarDao.GetInstance())
+                {
+                    var list_lue = db.Queryable<BasicDictionary>().Where(t => t.ParentId == parentId).ToList();       //品牌
+
+                    if (list_lue.Count > 0)
+                    {
+                        BasicDictionary p = new BasicDictionary();
+                        var l = list_lue.Select(m => new { m.Id, m.Name, m.Character }).ToList();
+
+                        lue.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id"));
+                        lue.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称"));
+                        lue.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Character", "简写"));
+                        lue.Properties.NullText = "";
+                        lue.Properties.ImmediatePopup = true;      //当用户在输入框按任一可见字符键时立即弹出下拉窗体
+                        lue.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;//要使用户可以输入，这里须设为Standard
+                        lue.Properties.SearchMode = SearchMode.OnlyInPopup;//自动过滤掉不需要显示的数据，可以根据需要变化
+                        lue.Properties.AutoSearchColumnIndex = 2;
+
+                        //lue.Properties.NullText = "请选择";
+                        //lue.EditValue = "Id";
+                        lue.Properties.ValueMember = "Id";
+                        lue.Properties.DisplayMember = "Name";
+                        lue.Properties.ShowHeader = true;
+                        //lue.ItemIndex = 0;        //选择第一项
+                        lue.Properties.DataSource = list_lue;
+
+                        //自适应宽度
+                        lue.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+                        //填充列
+                        //lue.Properties.PopulateColumns();
+                        //lue.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Character"));
+                        lue.Properties.Columns[0].Visible = false;
+                    }
+                    else
+                    {
+                        lue.Properties.NullText = "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("加载数据出错!" + ex.Message);
+            }
         }
         #endregion
     }

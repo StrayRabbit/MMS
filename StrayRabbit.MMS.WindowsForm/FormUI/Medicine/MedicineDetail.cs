@@ -14,6 +14,7 @@ using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Common.ToolsHelper;
 using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Model;
+using Log = StrayRabbit.MMS.Common.log4net.Log;
 
 namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
 {

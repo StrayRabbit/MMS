@@ -104,10 +104,11 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
                 //view列标题居左
                 this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
 
-
-                InitPageCount(orderCount);
-
-                lbl_Sum.Text = $"总数：{orderCount}";
+                if (pageIndex == 1)
+                {
+                    InitPageCount(orderCount);
+                    lbl_Sum.Text = $"总数：{orderCount}";
+                }
             }
             catch (Exception ex)
             {

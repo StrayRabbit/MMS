@@ -361,7 +361,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.BasicInfo
                             tl_dict_FocusedNodeChanged(null, null);
 
                             string name = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
-                            Log.Info(new LoggerInfo()
+                            Common.log4net.Log.Info(new LoggerInfo()
                             {
                                 LogType = LogType.基础信息.ToString(),
                                 CreateUserId = UserInfo.Account,

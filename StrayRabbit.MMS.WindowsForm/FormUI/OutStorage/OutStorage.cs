@@ -16,6 +16,7 @@ using StrayRabbit.MMS.Domain.Dto.Stock;
 using StrayRabbit.MMS.Domain.Model;
 using StrayRabbit.MMS.Service.IService;
 using StrayRabbit.MMS.Service.ServiceImp;
+using Log = StrayRabbit.MMS.Common.log4net.Log;
 
 namespace StrayRabbit.MMS.WindowsForm.FormUI.OutStorage
 {

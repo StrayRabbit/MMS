@@ -1,9 +1,11 @@
 ﻿using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StrayRabbit.MMS.Common.log4net;
+using StrayRabbit.MMS.Domain;
 using StrayRabbit.MMS.Domain.Model;
 using StrayRabbit.MMS.Service.IService;
 using StrayRabbit.MMS.Service.ServiceImp;
+using Log = StrayRabbit.MMS.Common.log4net.Log;
 
 namespace StrayRabbit.MMS.WindowsForm
 {
@@ -85,6 +87,38 @@ namespace StrayRabbit.MMS.WindowsForm
             UserInfo.Account = user.Account;
         }
         #endregion
+
+        #region 删除超出日期的业务日志
+
+        private void DeleteLog()
+        {
+            try
+            {
+                int days = int.Parse(System.Configuration.ConfigurationManager.AppSettings["LogDays"]);
+
+                if (days > 0)
+                {
+                    using (var db = SugarDao.GetInstance())
+                    {
+                        db.Delete<StrayRabbit.MMS.Domain.Model.Log>($"julianday('now')-julianday(date)>={days}");
+                    }
+                }
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region Load
+        private void Login_Load(object sender, System.EventArgs e)
+        {
+            DeleteLog();
+        } 
         #endregion
     }
 }
