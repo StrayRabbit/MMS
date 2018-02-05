@@ -35,12 +35,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v16.2.UI, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.2.Wizard, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -141,6 +145,12 @@
     <Compile Include="FormUI\OutStorage\OutStorageManage.Designer.cs">
       <DependentUpon>OutStorageManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUI\Report\ProfitLineChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUI\Report\ProfitLineChart.Designer.cs">
+      <DependentUpon>ProfitLineChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUI\Stock\StockDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +210,9 @@
     <EmbeddedResource Include="FormUI\OutStorage\OutStorageManage.resx">
       <DependentUpon>OutStorageManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormUI\Report\ProfitLineChart.resx">
+      <DependentUpon>ProfitLineChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUI\Stock\StockDetail.resx">
       <DependentUpon>StockDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +236,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataBase\MMS.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

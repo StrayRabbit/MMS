@@ -56,7 +56,7 @@ namespace StrayRabbit.MMS.Service.ServiceImp
                     var list = db.Queryable<Sys_Role_Module_Mapping>()
                         .JoinTable<Sys_Module>((s1, s2) => s1.ModuleId == s2.Id)
                         .Where<Sys_Module>((s1, s2) => s2.IsShow && s1.RoleId == roleId)
-                        .OrderBy<Sys_Module>((s1, s2) => s2.OrderBy, OrderByType.Desc)
+                        .OrderBy<Sys_Module>((s1, s2) => s2.OrderBy, OrderByType.Asc)
                         .OrderBy<Sys_Module>((s1, s2) => s2.Id)
                         .Select<Sys_Module, Sys_Module>((s1, s2) => new Sys_Module()
                         {
