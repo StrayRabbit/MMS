@@ -180,7 +180,6 @@
             this.gridColumn5,
             this.gridColumn12,
             this.gridColumn13,
-            this.gridColumn14,
             this.gridColumn15,
             this.gridColumn16,
             this.gridColumn17,
@@ -188,7 +187,8 @@
             this.gridColumn19,
             this.gridColumn20,
             this.gridColumn21,
-            this.gridColumn22});
+            this.gridColumn22,
+            this.gridColumn14});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView2.GridControl = this.gd_stock;
             this.gridView2.Name = "gridView2";
@@ -225,7 +225,7 @@
             this.gridColumn14.FieldName = "IsPrescription";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 2;
+            this.gridColumn14.VisibleIndex = 10;
             // 
             // gridColumn15
             // 
@@ -233,7 +233,7 @@
             this.gridColumn15.FieldName = "Sale";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 3;
+            this.gridColumn15.VisibleIndex = 2;
             // 
             // gridColumn16
             // 
@@ -241,7 +241,7 @@
             this.gridColumn16.FieldName = "YPGG";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 4;
+            this.gridColumn16.VisibleIndex = 3;
             // 
             // gridColumn17
             // 
@@ -249,7 +249,7 @@
             this.gridColumn17.FieldName = "YPDW";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 5;
+            this.gridColumn17.VisibleIndex = 4;
             // 
             // gridColumn18
             // 
@@ -257,7 +257,7 @@
             this.gridColumn18.FieldName = "BatchNum";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 6;
+            this.gridColumn18.VisibleIndex = 5;
             // 
             // gridColumn19
             // 
@@ -265,7 +265,7 @@
             this.gridColumn19.FieldName = "Amount";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 7;
+            this.gridColumn19.VisibleIndex = 6;
             // 
             // gridColumn20
             // 
@@ -273,7 +273,7 @@
             this.gridColumn20.FieldName = "SCCJ";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 8;
+            this.gridColumn20.VisibleIndex = 7;
             // 
             // gridColumn21
             // 
@@ -281,7 +281,7 @@
             this.gridColumn21.FieldName = "BeginDate";
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 9;
+            this.gridColumn21.VisibleIndex = 8;
             // 
             // gridColumn22
             // 
@@ -289,7 +289,7 @@
             this.gridColumn22.FieldName = "EndDate";
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 10;
+            this.gridColumn22.VisibleIndex = 9;
             // 
             // groupBox2
             // 

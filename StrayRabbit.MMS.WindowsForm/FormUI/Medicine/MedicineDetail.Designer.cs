@@ -33,7 +33,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txt_commonName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.lue_bzgg = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lue_unit = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -53,9 +52,9 @@
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.lue_ssjyfw = new DevExpress.XtraEditors.LookUpEdit();
+            this.txt_bzgg = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_commonName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_bzgg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_unit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_type.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_jgfl.Properties)).BeginInit();
@@ -66,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_pzwh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckb_isPrescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_ssjyfw.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_bzgg.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -105,15 +105,6 @@
             this.labelControl3.Size = new System.Drawing.Size(60, 14);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "通用名称：";
-            // 
-            // lue_bzgg
-            // 
-            this.lue_bzgg.Location = new System.Drawing.Point(421, 90);
-            this.lue_bzgg.Name = "lue_bzgg";
-            this.lue_bzgg.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lue_bzgg.Size = new System.Drawing.Size(150, 20);
-            this.lue_bzgg.TabIndex = 7;
             // 
             // labelControl4
             // 
@@ -217,11 +208,11 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(307, 223);
+            this.labelControl10.Location = new System.Drawing.Point(355, 223);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(108, 14);
+            this.labelControl10.Size = new System.Drawing.Size(60, 14);
             this.labelControl10.TabIndex = 18;
-            this.labelControl10.Text = "产品注册证批件号：";
+            this.labelControl10.Text = "批准文号：";
             // 
             // date_pzwh
             // 
@@ -281,11 +272,19 @@
             this.lue_ssjyfw.Size = new System.Drawing.Size(150, 20);
             this.lue_ssjyfw.TabIndex = 3;
             // 
+            // txt_bzgg
+            // 
+            this.txt_bzgg.Location = new System.Drawing.Point(420, 90);
+            this.txt_bzgg.Name = "txt_bzgg";
+            this.txt_bzgg.Size = new System.Drawing.Size(150, 20);
+            this.txt_bzgg.TabIndex = 25;
+            // 
             // MedicineDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 372);
+            this.Controls.Add(this.txt_bzgg);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.ckb_isPrescription);
@@ -303,7 +302,6 @@
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.lue_unit);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.lue_bzgg);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txt_commonName);
             this.Controls.Add(this.labelControl3);
@@ -320,7 +318,6 @@
             this.Load += new System.EventHandler(this.MedicineDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_commonName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_bzgg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_unit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_type.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_jgfl.Properties)).EndInit();
@@ -331,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_pzwh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ckb_isPrescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_ssjyfw.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_bzgg.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,7 +341,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txt_commonName;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LookUpEdit lue_bzgg;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LookUpEdit lue_unit;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -363,5 +360,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_save;
         private DevExpress.XtraEditors.SimpleButton btn_close;
         private DevExpress.XtraEditors.LookUpEdit lue_ssjyfw;
+        private DevExpress.XtraEditors.TextEdit txt_bzgg;
     }
 }

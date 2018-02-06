@@ -107,7 +107,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Report
             Series s1 = this.chartControl1.Series[0];//新建一个series类并给控件赋值  
             s1.ArgumentDataMember = "Date";        //绑定图表的横坐标
             s1.ValueDataMembers[0] = "Sum";        //绑定图表的纵坐标
-            s1.LegendText = "个数";//设置图例文字 就是右上方的小框框   
+            s1.LegendText = "利润";//设置图例文字 就是右上方的小框框   
         }
         #endregion
 
@@ -129,10 +129,10 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Report
             {
                 using (var db = SugarDao.GetInstance())
                 {
-                    var firstDay = Convert.ToDateTime(time.Year + "-" + time.Month + "-01");
-                    var lastDay = Convert.ToDateTime(Convert.ToDateTime(time.AddMonths(1).ToString("yyyy-MM-01")).AddDays(-1).ToString("yyyy-MM-dd 23:59"));
+                    var firstDay = Convert.ToDateTime(time.Year + "-" + time.Month + "-01").ToString("yyyy-MM-dd");
+                    var lastDay = Convert.ToDateTime(time.AddMonths(1).ToString("yyyy-MM-01")).AddDays(-1).ToString("yyyy-MM-dd 23:59");
 
-                    var list = db.Queryable<StockLog>().Where($" Type=='出库' and datetime(CreateTime)>={firstDay} and datetime(CreateTime)<{lastDay}").ToList();
+                    var list = db.Queryable<StockLog>().Where($" Type=='出库' and CreateTime>='{firstDay}' and CreateTime<'{lastDay}'").ToList();
 
 
 
@@ -141,14 +141,14 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Report
                         dr = dt.NewRow();
 
                         dr["Date"] = Convert.ToDateTime(time.Year + "-" + time.Month + "-" + i).ToString("yyyy-MM-dd");
-                        dr["Sum"] = list.Where(p => DateTime.Parse(p.CreateTime) >= Convert.ToDateTime(dr["Date"].ToString()) && DateTime.Parse(p.CreateTime) < Convert.ToDateTime(dr["Date"].ToString() + " 23:59")).ToList().Count;
+                        dr["Sum"] = list.Where(p => DateTime.Parse(p.CreateTime) >= Convert.ToDateTime(dr["Date"].ToString()) && DateTime.Parse(p.CreateTime) < Convert.ToDateTime(dr["Date"].ToString() + " 23:59")).ToList().Sum(t => (t.Sale - t.Cost) * t.Amount * -1);
                         dt.Rows.Add(dr);
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                XtraMessageBox.Show("根据月份统计出错!");
             }
 
 
@@ -186,7 +186,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Report
                         var lastDay = Convert.ToDateTime(Convert.ToDateTime(Convert.ToDateTime(time.Year + "-" + i + "-01").ToString("yyyy-MM-01")).AddMonths(1).AddDays(-1).ToString("yyyy-MM-dd 23:59"));
 
                         dr["Date"] = Convert.ToDateTime(time.Year + "-" + i).ToString("yyyy-MM");
-                        dr["Sum"] = list.Where(p => DateTime.Parse(p.CreateTime) >= firstDay && DateTime.Parse(p.CreateTime) < lastDay).ToList().Sum(t => (t.Sale - t.Cost) * t.Amount);
+                        dr["Sum"] = list.Where(p => DateTime.Parse(p.CreateTime) >= firstDay && DateTime.Parse(p.CreateTime) < lastDay).ToList().Sum(t => (t.Sale - t.Cost) * t.Amount * -1);
                         dt.Rows.Add(dr);
                     }
                 }

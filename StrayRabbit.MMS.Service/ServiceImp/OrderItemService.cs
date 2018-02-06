@@ -26,10 +26,9 @@ namespace StrayRabbit.MMS.Service.ServiceImp
                 {
                     list = db.Queryable<Domain.Model.OrderItem>()
                         .JoinTable<Medicine>((o, m) => o.MedicineId == m.Id)
-                        .JoinTable<Medicine, BasicDictionary>((o, m, ypgg) => m.PackModelId == ypgg.Id)
                         .JoinTable<Medicine, BasicDictionary>((o, m, sccj) => m.SCCJId == sccj.Id)
                         .Where(" OrderNum='" + orderNum + "'")
-                        .Select<OrderItemListDto>("o.Id,o.OrderId,o.MedicineId,o.BatchNum,o.Amount,o.Cost,o.Sale,o.BeginDate,o.EndDate,m.Name MedicineName,ypgg.Name as YPGG,sccj.Name as SCCJ")
+                        .Select<OrderItemListDto>("o.Id,o.OrderId,o.MedicineId,o.BatchNum,o.Amount,o.Cost,o.Sale,o.BeginDate,o.EndDate,m.Name MedicineName,m.BZGG as YPGG,sccj.Name as SCCJ")
                         .OrderBy(m => m.Id, OrderByType.Asc)
                         .ToList();
                 }

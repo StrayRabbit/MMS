@@ -30,14 +30,13 @@ namespace StrayRabbit.MMS.Service.ServiceImp
                 {
                     var list = db.Queryable<Domain.Model.Medicine>()
                          .JoinTable<BasicDictionary>((m, jyfw) => m.JYFWId == jyfw.Id)
-                         .JoinTable<BasicDictionary>((m, ypgg) => m.PackModelId == ypgg.Id)
                          .JoinTable<BasicDictionary>((m, dw) => m.UnitId == dw.Id)
                          .JoinTable<BasicDictionary>((m, jgfl) => m.JGFLId == jgfl.Id)
                          .JoinTable<BasicDictionary>((m, ypfl) => m.TypeId == ypfl.Id)
                          .JoinTable<BasicDictionary>((m, gys) => m.SupplierId == gys.Id)
                          .Where(" m.Id=" + medicineId)
                          .Select<MedicineListDto>(
-                             "m.Id,m.Name,m.NameCode,jyfw.Name as jyfwName,m.CommonName,ypgg.Name BzggName,dw.Name as UnitName,jgfl.Name JgflName,ypfl.Name ypflName,gys.Name gysName,m.CPZC,ypfl.Name as YpflName")
+                             "m.Id,m.Name,m.NameCode,jyfw.Name as jyfwName,m.CommonName,BZGG BzggName,dw.Name as UnitName,jgfl.Name JgflName,ypfl.Name ypflName,gys.Name gysName,m.CPZC,ypfl.Name as YpflName")
                          .ToList();
 
                     if (list != null && list.Any())
@@ -71,7 +70,6 @@ namespace StrayRabbit.MMS.Service.ServiceImp
                 {
                     list = db.Queryable<Domain.Model.Medicine>()
                         .JoinTable<BasicDictionary>((m, jyfw) => m.JYFWId == jyfw.Id)
-                        .JoinTable<BasicDictionary>((m, ypgg) => m.PackModelId == ypgg.Id)
                         .JoinTable<BasicDictionary>((m, dw) => m.UnitId == dw.Id)
                         .JoinTable<BasicDictionary>((m, jgfl) => m.JGFLId == jgfl.Id)
                         .JoinTable<BasicDictionary>((m, ypfl) => m.TypeId == ypfl.Id)
@@ -79,7 +77,7 @@ namespace StrayRabbit.MMS.Service.ServiceImp
                         .Where(" Status=1 and (m.Name like '%" + search + "%' or m.NameCode like '%" +
                                search + "%')")
                         .Select<MedicineListDto>(
-                            "m.Id,m.Name,m.NameCode,jyfw.Name as jyfwName,m.CommonName,ypgg.Name BzggName,dw.Name as UnitName,jgfl.Name JgflName,ypfl.Name ypflName,gys.Name gysName,m.CPZC,ypfl.Name as YpflName")
+                            "m.Id,m.Name,m.NameCode,jyfw.Name as jyfwName,m.CommonName,BZGG BzggName,dw.Name as UnitName,jgfl.Name JgflName,ypfl.Name ypflName,gys.Name gysName,m.CPZC,ypfl.Name as YpflName")
                         .OrderBy(m => m.Id, OrderByType.Desc)
                         .ToList();
                 }

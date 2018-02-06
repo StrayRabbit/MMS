@@ -31,7 +31,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
         private void MedicineDetail_Load(object sender, EventArgs e)
         {
             InitLookUpEdit(lue_ssjyfw, 2);      //所属经营范围
-            InitLookUpEdit(lue_bzgg, 3);      //包装规格
             InitLookUpEdit(lue_unit, 4);      //药品单位
             InitLookUpEdit(lue_type, 5);      //药剂分类
             InitLookUpEdit(lue_jgfl, 6);      //监管分类
@@ -48,7 +47,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
                         txt_name.Text = entity.Name;
                         txt_commonName.Text = entity.CommonName;
                         lue_ssjyfw.EditValue = entity.JYFWId;
-                        lue_bzgg.EditValue = entity.PackModelId;
+                        txt_bzgg.Text = entity.BZGG;
                         lue_unit.EditValue = entity.UnitId;
                         lue_type.EditValue = entity.TypeId;
                         lue_jgfl.EditValue = entity.JGFLId;
@@ -140,7 +139,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
                     CommonName = txt_commonName.Text.Trim(),
                     CommonNameCode = string.IsNullOrWhiteSpace(txt_commonName.Text.Trim()) ? "" : Pinyin.GetInitials(Pinyin.ConvertEncoding(txt_commonName.Text.Trim(), Encoding.UTF8, Encoding.GetEncoding("GB2312")), Encoding.GetEncoding("GB2312"))?.ToLower(),
                     JYFWId = lue_ssjyfw.EditValue == null ? 0 : int.Parse(lue_ssjyfw.EditValue.ToString()),
-                    PackModelId = lue_bzgg.EditValue == null ? 0 : int.Parse(lue_bzgg.EditValue.ToString()),
+                    BZGG = txt_bzgg.Text.Trim(),
                     UnitId = lue_unit.EditValue == null ? 0 : int.Parse(lue_unit.EditValue.ToString()),
                     TypeId = lue_type.EditValue == null ? 0 : int.Parse(lue_type.EditValue.ToString()),
                     JGFLId = lue_jgfl.EditValue == null ? 0 : int.Parse(lue_jgfl.EditValue.ToString()),
@@ -163,7 +162,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.Medicine
                             LogType = LogType.药品信息.ToString(),
                             CreateUserId = UserInfo.Account,
                             Message = msg + $"药品Id:{entity.Id},药品名称:{entity.Name},药品简写:{entity.NameCode},药品通用名称:{entity.CommonName}" +
-                                      $",药品通用名称简写:{entity.CommonNameCode},经营范围:{lue_ssjyfw.Text},药品规格:{lue_bzgg.Text},药品单位:{lue_unit.Text}" +
+                                      $",药品通用名称简写:{entity.CommonNameCode},经营范围:{lue_ssjyfw.Text},药品规格:{txt_bzgg.Text},药品单位:{lue_unit.Text}" +
                                       $",药剂分类:{lue_type.Text},监管分类:{lue_jgfl.Text},供应商:{lue_gys.Text},生产厂家:{lue_sccj.Text},产品注册证批件号:{txt_cpzc.Text.Trim()}" +
                                       $",批准文号有效期:{ date_pzwh.Text.Trim()},是否处方药:{(entity.IsPrescription ? "是" : "否")}"
 

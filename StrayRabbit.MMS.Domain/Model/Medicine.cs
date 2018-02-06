@@ -35,7 +35,7 @@ namespace StrayRabbit.MMS.Domain.Model
         /// <summary>
         /// 包装规格
         /// </summary>
-        public int? PackModelId { get; set; }
+        public string BZGG { get; set; }
         /// <summary>
         /// 单位
         /// </summary>
@@ -57,7 +57,7 @@ namespace StrayRabbit.MMS.Domain.Model
         /// </summary>
         public int? SCCJId { get; set; }
         /// <summary>
-        /// 产品注册证批件号
+        /// 批准文号
         /// </summary>
         public string CPZC { get; set; }
         /// <summary>
@@ -73,5 +73,7 @@ namespace StrayRabbit.MMS.Domain.Model
         /// 状态 1有效 -1无效
         /// </summary>
         public int Status { get; set; }
+
+        public int? OldId { get; set; }
     }
 }

@@ -33,13 +33,12 @@ namespace StrayRabbit.MMS.Service.ServiceImp
 
                     result = db.Queryable<Domain.Model.Stock>()
                         .JoinTable<Medicine>((s, m) => s.MedicineId == m.Id)
-                        .JoinTable<Medicine, BasicDictionary>((s, m, ypgg) => m.PackModelId == ypgg.Id)     //药品规格
                         .JoinTable<Medicine, BasicDictionary>((s, m, sccj) => m.SCCJId == sccj.Id)      //生产厂家
                         .JoinTable<Medicine, BasicDictionary>((s, m, ypdw) => m.UnitId == ypdw.Id)      //药品单位
                         .JoinTable<Medicine, BasicDictionary>((s, m, gys) => m.SupplierId == gys.Id)      //药品单位
                                                                                                           //.Where<Medicine>((s, m) => s.Amount > 0 && (m.NameCode.Contains(name) || m.Name.Contains(name)))
                         .Where(sqlWhere)
-                        .Select<StockListDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,ypgg.Name YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName,s.TotalSales")
+                        .Select<StockListDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,m.bzgg YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName,s.TotalSales")
                         .OrderBy(m => m.Id, OrderByType.Asc)
                         .ToList();
                 }
@@ -68,13 +67,12 @@ namespace StrayRabbit.MMS.Service.ServiceImp
                 {
                     var list = db.Queryable<Domain.Model.Stock>()
                         .JoinTable<Medicine>((s, m) => s.MedicineId == m.Id)
-                        .JoinTable<Medicine, BasicDictionary>((s, m, ypgg) => m.PackModelId == ypgg.Id)     //药品规格
                         .JoinTable<Medicine, BasicDictionary>((s, m, sccj) => m.SCCJId == sccj.Id)      //生产厂家
                         .JoinTable<Medicine, BasicDictionary>((s, m, ypdw) => m.UnitId == ypdw.Id)      //药品单位
                         .JoinTable<Medicine, BasicDictionary>((s, m, gys) => m.SupplierId == gys.Id)      //供应商
                         .JoinTable<Medicine, BasicDictionary>((s, m, jyfw) => m.JYFWId == jyfw.Id)      //经营范围
                         .Where($" s.Id={id}")
-                        .Select<StockDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,ypgg.Name YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName,s.Cost,jyfw.Name JyfwName").ToList();
+                        .Select<StockDto>("s.Id,m.Name MedicineName,m.CommonName MedicineCommonName,m.NameCode,m.IsPrescription,s.Sale,m.BZGG YPGG,ypdw.Name YPDW,s.BatchNum,s.Amount,sccj.Name SCCJ,s.BeginDate,s.EndDate,gys.Name GysName,s.Cost,jyfw.Name JyfwName").ToList();
 
                     if (list != null && list.Any())
                     {
