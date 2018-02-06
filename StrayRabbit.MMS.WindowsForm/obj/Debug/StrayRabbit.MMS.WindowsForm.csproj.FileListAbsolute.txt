@@ -5,7 +5,6 @@ E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\StrayRabbit.MMS.WindowsForm.
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\DevExpress.BonusSkins.v16.2.dll
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\DevExpress.Charts.v16.2.Core.dll
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\DevExpress.Data.v16.2.dll
-E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\DevExpress.Images.v16.2.dll
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\DevExpress.Printing.v16.2.Core.dll
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\DevExpress.Sparkline.v16.2.Core.dll
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\bin\Debug\DevExpress.Utils.v16.2.dll
@@ -161,3 +160,4 @@ E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.csproj.CoreCompileInputs.cache
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.exe
 E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.pdb
+E:\GitHub\MMS\StrayRabbit.MMS.WindowsForm\obj\Debug\StrayRabbit.MMS.WindowsForm.FormUI.Other.UpdatePwd.resources

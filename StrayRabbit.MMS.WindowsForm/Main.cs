@@ -6,6 +6,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
 using StrayRabbit.MMS.Service.IService;
 using StrayRabbit.MMS.Service.ServiceImp;
+using StrayRabbit.MMS.WindowsForm.FormUI.Other;
 
 namespace StrayRabbit.MMS.WindowsForm
 {
@@ -31,6 +32,7 @@ namespace StrayRabbit.MMS.WindowsForm
                 {
                     NavBarGroup group;
                     NavBarItem nbItem;
+                    bool IsFirst = true;
 
                     foreach (var m in list.Where(t => t.ParentId == 0))
                     {
@@ -47,6 +49,12 @@ namespace StrayRabbit.MMS.WindowsForm
                             group.ItemLinks.Add(nbItem);
                             nbItem.LinkClicked += this.navBarItem_ItemClick;
                         }
+
+                        if (IsFirst)
+                        {
+                            group.Expanded = true;
+                            IsFirst = false;
+                        }
                     }
                 }
             }
@@ -62,6 +70,8 @@ namespace StrayRabbit.MMS.WindowsForm
         private void Main_Load(object sender, EventArgs e)
         {
             InitMenu();
+
+            barStaticItem1.Caption = $"当前登录人：{UserInfo.UserName}";
         }
         #endregion
 
@@ -77,7 +87,7 @@ namespace StrayRabbit.MMS.WindowsForm
                 var childForm = (XtraForm)asm.CreateInstance(e.Link.Item.Tag.ToString());
                 if (childForm != null)
                 {
-                    UserInfo.ChildHeight = this.Height -230;
+                    UserInfo.ChildHeight = this.Height - 230;
                     UserInfo.ChildWidth = this.Width - 200;
 
                     childForm.MdiParent = this;
@@ -114,7 +124,25 @@ namespace StrayRabbit.MMS.WindowsForm
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        } 
+        }
+        #endregion
+
+        #region 修改密码
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new UpdatePwd();
+            frm.ShowDialog();
+        }
+        #endregion
+
+        #region 退出
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (XtraMessageBox.Show("你确认需要退出吗？", "系统提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
         #endregion
     }
 }
