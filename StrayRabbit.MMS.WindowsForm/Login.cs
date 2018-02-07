@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using StrayRabbit.MMS.Common.log4net;
 using StrayRabbit.MMS.Domain;
@@ -117,8 +118,29 @@ namespace StrayRabbit.MMS.WindowsForm
         #region Load
         private void Login_Load(object sender, System.EventArgs e)
         {
-            DeleteLog();
-        } 
+            try
+            {
+                lblTitle.Text = System.Configuration.ConfigurationManager.AppSettings["Pharmacy"];
+
+                Copy();
+
+                DeleteLog();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        #endregion
+
+        #region 数据库备份
+        public void Copy()        {            try            {                string fileName = DateTime.Now.ToString("yyyyMMdd") + ".db";
+
+                var Path = System.Configuration.ConfigurationManager.AppSettings["Backup"];    //原文件的物理路径
+                var targetPath = Path.Substring(0, Path.LastIndexOf("\\") + 1) + "backup\\" + fileName;    //复制到的新位置物理路径
+
+                //判断到的新地址是否存在重命名文件
+                if (!System.IO.File.Exists(targetPath))                {                    System.IO.File.Copy(Path, targetPath);  //复制到新位置,不允许覆盖现有文件
+                }            }            catch (Exception)            {            }        }
         #endregion
     }
 }

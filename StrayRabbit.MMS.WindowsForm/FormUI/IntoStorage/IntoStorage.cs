@@ -51,7 +51,6 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
         #endregion
 
         #region 数据加载
-
         private void InitData()
         {
             if (detailId <= 0)
@@ -60,6 +59,10 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.IntoStorage
 
                 txt_UserName.Text = UserInfo.UserName;
                 txt_CreateTime.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                //if (lue_gys.Properties.DropDownRows == 1)
+                //{
+                //    lue_gys.ItemIndex = 0;
+                //}
             }
             else
             {

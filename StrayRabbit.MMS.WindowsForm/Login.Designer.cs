@@ -39,7 +39,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.EditValue = "admin";
+            this.txt_password.EditValue = "";
             this.txt_password.Location = new System.Drawing.Point(383, 185);
             this.txt_password.Name = "txt_password";
             this.txt_password.Properties.PasswordChar = '*';
@@ -49,7 +49,7 @@
             // 
             // txt_userName
             // 
-            this.txt_userName.EditValue = "admin";
+            this.txt_userName.EditValue = "";
             this.txt_userName.Location = new System.Drawing.Point(383, 152);
             this.txt_userName.Name = "txt_userName";
             this.txt_userName.Size = new System.Drawing.Size(160, 20);

@@ -49,7 +49,7 @@ namespace StrayRabbit.MMS.WindowsForm.FormUI.StockManage
                     txt_ssjyfw.Text = entity.JyfwName;
                     txt_bzgg.Text = entity.YPGG;
                     txt_dw.Text = entity.YPDW;
-                    txt_sccj.Text = entity.GysName;
+                    txt_sccj.Text = entity.SCCJ;
                     txt_beginDate.Text = entity.BeginDate;
                     txt_endDate.Text = entity.EndDate;
                     txt_cost.Text = entity.Cost.ToString();

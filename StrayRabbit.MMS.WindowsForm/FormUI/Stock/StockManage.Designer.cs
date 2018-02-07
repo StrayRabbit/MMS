@@ -48,6 +48,8 @@
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_syts = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             this.txt_search = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -70,8 +72,6 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gd_list = new DevExpress.XtraGrid.GridControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_syts = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPageNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -85,12 +85,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_syts.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_search.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckedComboBoxEdit2)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gd_list)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_syts.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // 删除ToolStripMenuItem
@@ -248,6 +248,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "查询条件";
             // 
+            // txt_syts
+            // 
+            this.txt_syts.Location = new System.Drawing.Point(364, 20);
+            this.txt_syts.Name = "txt_syts";
+            this.txt_syts.Size = new System.Drawing.Size(186, 20);
+            this.txt_syts.TabIndex = 19;
+            this.txt_syts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(298, 23);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(60, 14);
+            this.labelControl4.TabIndex = 18;
+            this.labelControl4.Text = "剩余天数：";
+            // 
             // btn_search
             // 
             this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -334,16 +350,12 @@
             this.gridColumn13.Caption = "简写";
             this.gridColumn13.FieldName = "NameCode";
             this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "药品通用名称";
             this.gridColumn3.FieldName = "MedicineCommonName";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
             // 
             // gridColumn6
             // 
@@ -351,7 +363,7 @@
             this.gridColumn6.FieldName = "YPGG";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
+            this.gridColumn6.VisibleIndex = 1;
             // 
             // gridColumn7
             // 
@@ -359,7 +371,7 @@
             this.gridColumn7.FieldName = "YPDW";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 4;
+            this.gridColumn7.VisibleIndex = 2;
             // 
             // gridColumn8
             // 
@@ -367,7 +379,7 @@
             this.gridColumn8.FieldName = "BatchNum";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 5;
+            this.gridColumn8.VisibleIndex = 3;
             // 
             // gridColumn9
             // 
@@ -375,7 +387,7 @@
             this.gridColumn9.FieldName = "Amount";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 6;
+            this.gridColumn9.VisibleIndex = 4;
             // 
             // gridColumn15
             // 
@@ -383,7 +395,7 @@
             this.gridColumn15.FieldName = "TotalSales";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 7;
+            this.gridColumn15.VisibleIndex = 5;
             // 
             // gridColumn5
             // 
@@ -391,15 +403,17 @@
             this.gridColumn5.FieldName = "Sale";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
+            this.gridColumn5.VisibleIndex = 6;
             // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "供应商";
             this.gridColumn14.FieldName = "GysName";
+            this.gridColumn14.MaxWidth = 100;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 9;
+            this.gridColumn14.VisibleIndex = 7;
+            this.gridColumn14.Width = 50;
             // 
             // gridColumn10
             // 
@@ -407,7 +421,7 @@
             this.gridColumn10.FieldName = "SCCJ";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 10;
+            this.gridColumn10.VisibleIndex = 8;
             // 
             // gridColumn11
             // 
@@ -415,7 +429,7 @@
             this.gridColumn11.FieldName = "BeginDate";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 11;
+            this.gridColumn11.VisibleIndex = 9;
             // 
             // gridColumn12
             // 
@@ -423,7 +437,7 @@
             this.gridColumn12.FieldName = "EndDate";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 12;
+            this.gridColumn12.VisibleIndex = 10;
             // 
             // gridColumn4
             // 
@@ -431,7 +445,7 @@
             this.gridColumn4.FieldName = "IsPrescription";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 13;
+            this.gridColumn4.VisibleIndex = 11;
             // 
             // gd_list
             // 
@@ -443,22 +457,6 @@
             this.gd_list.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gd_list.DoubleClick += new System.EventHandler(this.gd_list_DoubleClick);
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(298, 23);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(60, 14);
-            this.labelControl4.TabIndex = 18;
-            this.labelControl4.Text = "剩余天数：";
-            // 
-            // txt_syts
-            // 
-            this.txt_syts.Location = new System.Drawing.Point(364, 20);
-            this.txt_syts.Name = "txt_syts";
-            this.txt_syts.Size = new System.Drawing.Size(186, 20);
-            this.txt_syts.TabIndex = 19;
-            this.txt_syts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
             // 
             // StockManage
             // 
@@ -486,12 +484,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_syts.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_search.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckedComboBoxEdit2)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gd_list)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_syts.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
