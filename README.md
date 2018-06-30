@@ -1,5 +1,6 @@
 # MMS
 药房管理系统
+
 1、采购入库
 ![采购入库](https://github.com/StrayRabbit/MMS/blob/master/StrayRabbit.MMS.WindowsForm/Image/rk.png)
 2、销售出库
