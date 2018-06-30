@@ -291,6 +291,14 @@
     <None Include="Resources\ok.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\2.ico" />
+    <Content Include="Image\3.ico" />
+    <Content Include="Image\ck.png" />
+    <Content Include="Image\jcxx.png" />
+    <Content Include="Image\kc.png" />
+    <Content Include="Image\ooopic_1517967396.ico" />
+    <Content Include="Image\rk.png" />
+    <Content Include="Image\yp.png" />
     <Content Include="ooopic_1517967396.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
