@@ -11,6 +11,7 @@
 5、基础信息维护
 ![基础信息](https://github.com/StrayRabbit/MMS/blob/master/StrayRabbit.MMS.WindowsForm/Image/jcxx.png)
 6、利润统计查询
+
 7、日志管理
 
 账号：admin
